@@ -1,27 +1,34 @@
-// function memory
-function memory (memoey8gb) {
-    var memoryPrice = document.getElementById('memory-price');
-
-    if (memoey8gb==true){
-        memoryPrice.innerText = 0;
+// function of memory & delivery feature
+function features (featureId,feature,cost) {
+    const featurePrice = document.getElementById(featureId);
+    if (feature==true){
+        featurePrice.innerText = cost;
     }
     else {
-        memoryPrice.innerText = 180;
+        featurePrice.innerText = cost;
     }
+    // total price function call
     total();
 }
-// memory
+// memory event handler
 document.getElementById('memory-8gb').addEventListener('click',function(){
-    memory(true);
+    features('memory-price',true,0);
 })
 document.getElementById('memory-16gb').addEventListener('click',function(){
-    memory(false);
+    features('memory-price',false,180);
 })
 
-// function storage
-function storage (macStorage){
-    var storagePrice = document.getElementById('storage-price');
+// delivery event handler
+document.getElementById('free-delivery').addEventListener('click', function () {
+    features('delivery-cost',true,0);
+})
+document.getElementById('paid-delivery').addEventListener('click', function () {
+    features('delivery-cost',false,20);
+})
 
+// function of storage feature
+function storage (macStorage){
+    const storagePrice = document.getElementById('storage-price');
     if(macStorage=='256gb'){
         storagePrice.innerText = 0;
     }
@@ -31,9 +38,10 @@ function storage (macStorage){
     else {
         storagePrice.innerText = 180;
     }
+    // total price function call
     total();
 }
-// storage
+// storage event handler
 document.getElementById('storage-256gb').addEventListener('click', function () {
     storage('256gb');
 })
@@ -44,56 +52,39 @@ document.getElementById('storage-1tb').addEventListener('click', function () {
     storage('1tb');
 })
 
-// function delivery
-function delivery (deliveryLate) {
-    var deliveryPrice = document.getElementById('delivery-cost');
 
-    if (deliveryLate==true){
-        deliveryPrice.innerText = 0;
-    }
-    else {
-        deliveryPrice.innerText = 20;
-    }
-    total();
-}
-// delivery
-document.getElementById('free-delivery').addEventListener('click', function () {
-   delivery(true);
-})
-document.getElementById('paid-delivery').addEventListener('click', function () {
-    delivery(false);
-})
-
-// each feature price
+// each feature innertext
 function eachFeaturePrice (price){
-    var eachPrice = document.getElementById(price);
-    var eachPriceAmount = parseFloat(eachPrice.innerText);
+    const eachPrice = document.getElementById(price);
+    const eachPriceAmount = parseFloat(eachPrice.innerText);
     return eachPriceAmount;
 }
-// total
+// total price
 function total () {
-    var bestPrice = document.getElementById('best-price');
-    var bestPriceAmount = parseFloat(bestPrice.innerText);
+    const bestPrice = document.getElementById('best-price');
+    const bestPriceAmount = parseFloat(bestPrice.innerText);
 
-    var total = document.getElementById('total-price');
+    const total = document.getElementById('total-price');
     total.innerText = bestPriceAmount + eachFeaturePrice('memory-price') + eachFeaturePrice('storage-price') + eachFeaturePrice('delivery-cost');
 
-    var allTotal = document.getElementById('all-total');
+    const allTotal = document.getElementById('all-total');
     allTotal.innerText = total.innerText;
 }
-
-// total after promo
+// total price after promocode discount
 document.getElementById('code-btn').addEventListener('click',function(){
-    var codeInput = document.getElementById('promocode');
-    var code = codeInput.value;
+    const codeInput = document.getElementById('promocode');
+    const code = codeInput.value;
     codeInput.value = '';
 
-    var total = document.getElementById('total-price');
-    var allTotal = document.getElementById('all-total');
+    const total = document.getElementById('total-price');
+    const allTotal = document.getElementById('all-total');
 
     if(code=='stevekaku') {
-        var priceOff = total.innerText / 5;
+        const priceOff = total.innerText / 5;
         allTotal.innerText = total.innerText - priceOff;
+    }
+    else {
+        alert('Opps!!! you entered a wrong promo Code');
     }
 })
 
