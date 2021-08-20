@@ -77,9 +77,25 @@ function total () {
 
     var total = document.getElementById('total-price');
     total.innerText = bestPriceAmount + eachFeaturePrice('memory-price') + eachFeaturePrice('storage-price') + eachFeaturePrice('delivery-cost');
+
+    var allTotal = document.getElementById('all-total');
+    allTotal.innerText = total.innerText;
 }
 
 // total after promo
+document.getElementById('code-btn').addEventListener('click',function(){
+    var codeInput = document.getElementById('promocode');
+    var code = codeInput.value;
+    codeInput.value = '';
+
+    var total = document.getElementById('total-price');
+    var allTotal = document.getElementById('all-total');
+
+    if(code=='stevekaku') {
+        var priceOff = total.innerText / 5;
+        allTotal.innerText = total.innerText - priceOff;
+    }
+})
 
 
 
