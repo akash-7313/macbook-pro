@@ -26,25 +26,25 @@
                     </div>
                     <div class="mb-3">
                         <h4>Memory</h4>
-                        <button class="btn btn-outline-dark">8GB unified memory</button>
-                        <button class="btn btn-outline-dark">16GB unified memory</button>
+                        <button id="memory-8gb" class="btn btn-outline-dark">8GB unified memory</button>
+                        <button id="memory-16gb" class="btn btn-outline-dark">16GB unified memory</button>
                     </div>
                     <div class="mb-3">
                         <h4>Storage</h4>
-                        <button class="btn btn-outline-dark">256 GB SSD storage</button>
-                        <button class="btn btn-outline-dark">512 GB SSD storage</button>
-                        <button class="btn btn-outline-dark">1 TBGB SSD storage</button>
+                        <button id="storage-256gb" class="btn btn-outline-dark">256 GB SSD storage</button>
+                        <button id="storage-512gb" class="btn btn-outline-dark">512 GB SSD storage</button>
+                        <button id="storage-1tb" class="btn btn-outline-dark">1 TBGB SSD storage</button>
                     </div>
                     <div class="mb-5">
                         <h4>Choose your delivery option</h4>
-                        <button class="btn btn-outline-dark">Friday,Aug 25 FREE Prime Delivery</button>
-                        <button class="btn btn-outline-dark">Friday,Aug 21 Delivery charge $20</button>
+                        <button id="free-delivery" class="btn btn-outline-dark">Friday,Aug 25 FREE Prime Delivery</button>
+                        <button id="paid-delivery" class="btn btn-outline-dark">Friday,Aug 21 Delivery charge $20</button>
                     </div>
                     <div class="row">
                         <div class="col-6">
                             <div class="d-flex justify-content-between">
                                 <h5>Best Price</h5>
-                                <h5>$<span>1299</span></h5>
+                                <h5>$<span id="best-price">1299</span></h5>
                             </div>
                             <hr>
                         </div>
@@ -53,7 +53,7 @@
                         <div class="col-6">
                             <div class="d-flex justify-content-between">
                                 <h5>Extra Memory Cost</h5>
-                                <h5>$<span>0</span></h5>
+                                <h5>$<span id="memory-price">0</span></h5>
                             </div>
                             <hr>
                         </div>
@@ -62,7 +62,7 @@
                         <div class="col-6">
                             <div class="d-flex justify-content-between">
                                 <h5>Extra Storage Cost</h5>
-                                <h5>$<span>0</span></h5>
+                                <h5>$<span id="storage-price">0</span></h5>
                             </div>
                             <hr>
                         </div>
@@ -71,7 +71,7 @@
                         <div class="col-6">
                             <div class="d-flex justify-content-between">
                                 <h5>Delivery Charge</h5>
-                                <h5>$<span>0</span></h5>
+                                <h5>$<span id="delivery-cost">0</span></h5>
                             </div>
                             <hr class="border-top border-4 border-dark">
                         </div>
@@ -80,7 +80,7 @@
                         <div class="col-6">
                             <div class="d-flex justify-content-between">
                                 <h5>Total Price</h5>
-                                <h5>$<span>1299</span></h5>
+                                <h5>$<span id="total-price">1299</span></h5>
                             </div>
                             <hr>
                         </div>
@@ -90,16 +90,20 @@
                             <h5>Add Promo Code</h5>
                             <div class="d-flex justify-content-between">
                                 <input type="text">
-                                <button class="btn btn-success">Apply</button>
+                                <button class="btn btn-success px-4">Apply</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <hr>
-            <h3 class="text-center">Total:$<span>1299</span></h3>
+            <h3 class="text-center">Total:$<span id="all-total">1299</span></h3>
         </section>
     </main>
     <footer></footer>
+
+    <!-- custom js -->
+    <script src="mac.js"></script>
+    
 </body>
 </html>
