@@ -53,13 +53,13 @@ document.getElementById('storage-1tb').addEventListener('click', function () {
 })
 
 
-// each feature innertext
+// function of each feature innertext
 function eachFeaturePrice (price){
     const eachPrice = document.getElementById(price);
     const eachPriceAmount = parseFloat(eachPrice.innerText);
     return eachPriceAmount;
 }
-// total price
+// function of total price
 function total () {
     const bestPrice = document.getElementById('best-price');
     const bestPriceAmount = parseFloat(bestPrice.innerText);
